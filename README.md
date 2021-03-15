@@ -7,4 +7,4 @@ Generate a password based on user needs.
 https://dzarbis.github.io/generator/
 
 ## Screenshot
-![screenshot] (./Develop/screenshot.png)
+![screenshot] (/Develop/screenshot.png)
