@@ -26,16 +26,37 @@ var passwordParameters = function() {
   }
 
   var parameters = {
-    characterLength: characterLength,
-    checkUpper: checkUpper,
-    checkLower: checkLower,
-    checkNumber: checkNumber,
-    checkSpecial: checkSpecial
+    length: characterLength,
+    up: checkUpper,
+    low: checkLower,
+    num: checkNumber,
+    spec: checkSpecial
   }
   return parameters
 };
 
-passwordParameters();
+function generatePassword() {
+  var pwPara = passwordParameters();
+  var final = [];
+  
+  if (pwPara.up) {
+    final = final.concat(upper)
+  };
+
+  if (pwPara.low) {
+    final = final.concat(lower)
+  };
+
+  if (pwPara.num) {
+    final = final.concat(number)
+  };
+
+  if (pwPara.spec) {
+    final = final.concat(special)
+  };
+
+  
+}
 
 
 // Get references to the #generate element
