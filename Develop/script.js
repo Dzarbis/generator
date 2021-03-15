@@ -26,7 +26,7 @@ var passwordParameters = function() {
   }
 
   var parameters = {
-    length: characterLength,
+    len: characterLength,
     up: checkUpper,
     low: checkLower,
     num: checkNumber,
@@ -38,6 +38,7 @@ var passwordParameters = function() {
 function generatePassword() {
   var pwPara = passwordParameters();
   var final = [];
+  var pWord = "";
   
   if (pwPara.up) {
     final = final.concat(upper)
@@ -55,7 +56,12 @@ function generatePassword() {
     final = final.concat(special)
   };
 
-  
+  for (var i = 0; i < pwPara.len; i++) {
+    var randomizer = Math.floor(Math.random() * final.length);
+    pWord += final[randomizer];
+  };
+
+  return pWord;
 }
 
 
